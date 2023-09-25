@@ -1,27 +1,24 @@
 package fintech;
 
-import java.sql.Date;
+import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Value;
 
-@Getter
+@Value
 public class Weather {
     private Integer id;
     private String regionName;
-    @Setter private Double temperature;
-    @Setter private Date date;
+    private Double temperature;
+    private LocalDate date;
+    private LocalTime time;
 
-    public Weather(String regionName, Double temperature, Date date) {
-        this.id = Database.putElement(regionName);
+    public Weather(String regionName, Double temperature, LocalDate date, LocalTime time) {
+        this.id = RegionIdGenerator.putElement(regionName);
         this.regionName = regionName;
         this.temperature = temperature;
         this.date = date;
+        this.time = time;
     }
-
-    final public void setNameRegion(String regionName) {
-        this.id = Database.putElement(regionName);
-        this.regionName = regionName;
-    }
-
 }
