@@ -1,3 +1,9 @@
+# Ignore Gradle project-specific cache directory
+# .gradle
 
-!README.md
-!.gitignore
+# Ignore Gradle build output directory
+#build
+
+# Ignore binary files
+#*.class
+
