@@ -16,7 +16,7 @@ public class App {
     }
 
     public static void test1AverageTemperature() {
-        System.out.println(StreamAPI.averateTemperatureInRegions());
+        System.out.println(StreamAPI.averageTemperatureInRegions());
     }
 
     public static void test2SearchRegionsWithTemperatureHigherTemperature(){

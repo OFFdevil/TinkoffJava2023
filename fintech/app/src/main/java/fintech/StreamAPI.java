@@ -20,7 +20,7 @@ public class StreamAPI {
         );
 
     // calculate average temperature in all regions
-    static public Double averateTemperatureInRegions() {
+    static public Double averageTemperatureInRegions() {
         return listWeathers.stream().mapToDouble(Weather::getTemperature).average().orElse(0.0);
     }
 
