@@ -40,11 +40,11 @@ public class StreamAPI {
 
     static public Map<Integer, List<Double>> allObservationsForAllRegions(){
         return test.stream()
-                    .collect(Collectors.groupingBy(Weather::getID, Collectors.mapping(Weather::getTemperature, Collectors.toList())));
-    } 
+                    .collect(Collectors.groupingBy(Weather::getId, Collectors.mapping(Weather::getTemperature, Collectors.toList())));
+    }
 
     static public Map<Double, List<Weather>> allRegionsForAllTemperature(){
         return test.stream()
                     .collect(Collectors.groupingBy(Weather::getTemperature, Collectors.toList()));
-    } 
+    }
 }
