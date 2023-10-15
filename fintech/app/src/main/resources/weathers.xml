@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmLns="http://www.Liquibase.org/xmL/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="TodayWeathers" author="d.plotnikov">
+        <preConditions onFail="MARK_RAN" onError="WARN">
+            <not>
+                <tableExists tableName="STUDENT"/>
+            </not>
+        </preConditions>
+
+        <createTable tableName="STUDENT">
+            <column name="ID" type="UUID" remarks="UUID weather">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="CITY" type="VARCHAR2(50)" remarks="CITY">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="WEATHER" type="NUMBER(11)" remarks="Temperature in city">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="TYPE_WEATHER" type="NUMBER(11)" remarks="Type weather in city">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
